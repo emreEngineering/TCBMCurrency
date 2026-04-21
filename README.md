@@ -1,27 +1,78 @@
-# TCMBCurrency
+# TCBM Currency Dashboard
 
-Bu proje, Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından yayınlanan günlük döviz kurlarını alır.
+Türkiye Cumhuriyet Merkez Bankası (TCMB) döviz kurlarını anlık olarak
+çeken ve kullanıcı dostu bir arayüzde sunan full-stack web uygulaması.
 
-## Çalıştırma
+## Özellikler
 
-```bash
-go run .
-```
+-    Güncel döviz kurlarını görüntüleme
+-    Arama ve filtreleme
+-    USD, EUR, GBP için öne çıkan kartlar
+-    Gerçek zamanlı veri (TCMB XML API)
+-    REST API + React arayüz
 
-## Ne Yapar?
+------------------------------------------------------------------------
+##  Ekran Görüntüsü
 
-- TCMB XML kur verisini çeker
-- XML verisini ayrıştırır
-- Sayısal string değerleri Go tiplerine dönüştürür
-- Ayrıştırılan kur bilgilerini ekrana yazdırır
+<img src="./assets/ui.jpeg" alt="Uygulama çıktısı" width="1000">
 
-## Dosyalar
+------------------------------------------------------------------------
 
-- `main.go`: ana uygulama mantığı
-- `go.mod`: Go modül tanımı
+## ️ Kullanılan Teknolojiler
 
-## Çıktı Görselleri
+### Backend (Go)
 
-<img src="./img.png" alt="Uygulama çıktısı 1" width="450">
+-   Go (Golang)
+-   net/http
+-   XML parsing (encoding/xml)
 
-<img src="./img_1.png" alt="Uygulama çıktısı 2" width="450">
+### Frontend (React)
+
+-   React + Vite
+-   Axios
+-   CSS (custom styling)
+
+------------------------------------------------------------------------
+
+## Proje Mimarisi
+
+    TCBMCurrency/
+      internal/
+        tcmb/        -> TCMB veri çekme ve parse işlemleri
+        http/        -> API handler'lar
+
+      frontend/
+        React uygulaması
+
+------------------------------------------------------------------------
+
+##  API Endpointleri
+
+### Sağlık kontrolü
+
+GET /api/health
+
+### Güncel döviz kurları
+
+GET /api/currencies/today
+
+------------------------------------------------------------------------
+
+## ️ Kurulum ve Çalıştırma
+
+### Backend
+
+    go run .
+
+### Frontend
+
+    cd frontend
+    npm install
+    npm run dev
+
+------------------------------------------------------------------------
+
+## Veri Kaynağı
+
+http://www.tcmb.gov.tr/kurlar/
+
