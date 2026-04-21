@@ -76,3 +76,15 @@ GET /api/currencies/today
 
 http://www.tcmb.gov.tr/kurlar/
 
+------------------------------------------------------------------------
+
+## Hakkında
+
+Bu proje, Go öğrenme sürecimde geliştirdiğim küçük bir uygulamadır.
+
+Amaçlarım:
+- XML veri çekme ve parse etme
+- String verileri sayısal tiplere dönüştürme
+- Gerçek dünya verisi ile çalışma pratiği kazanmak
+
+Geliştirme sürecinde, bazı konuları daha hızlı öğrenmek ve farklı yaklaşımları görmek için AI araçlarından destek aldım.
